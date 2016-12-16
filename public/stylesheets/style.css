@@ -1,5 +1,79 @@
 /* line 1, style.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, style.scss */
+ul {
+  list-style: none;
+}
+
+/* line 8, style.scss */
 body {
   margin: 0;
   padding: 0;
+}
+
+/* line 12, style.scss */
+.container {
+  width: 1000px;
+}
+
+/* line 16, style.scss */
+#header .top-menu {
+  background-color: #0f0f0f;
+  height: 25px;
+}
+/* line 20, style.scss */
+#header .top-menu ul {
+  width: 1000px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
+/* line 25, style.scss */
+#header .top-menu ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+/* line 28, style.scss */
+#header .top-menu ul li a {
+  line-height: 25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ccc;
+}
+/* line 35, style.scss */
+#header .top-menu ul li:first-child {
+  margin-left: 0;
+}
+/* line 41, style.scss */
+#header .face {
+  width: 1000px;
+  margin: 10px auto 0 auto;
+}
+/* line 44, style.scss */
+#header .face .logo {
+  width: 200px;
+  display: inline-block;
+  height: 75px;
+  background: url("../images/Logo.png") no-repeat;
+  border: 0px solid black;
+}
+/* line 51, style.scss */
+#header .face .subheader {
+  height: 75px;
+  display: inline-block;
+  background: #761c19 url("../images/face.png") no-repeat;
+  width: 780px;
+  margin-left: 15px;
+}
+/* line 59, style.scss */
+#header .sublogo {
+  height: 30px;
+  width: 100%;
+  background-color: #0f0f0f;
+  width: 1000px;
+  margin: 10px auto 0 auto;
 }

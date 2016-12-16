@@ -1,0 +1,61 @@
+#admin{
+  header{
+    width: 100%;
+    height: 30px;
+    background-color: #8c8c8c;
+    position: relative;
+  }
+
+  .row{
+    margin: 0;
+    background-color: #9acfea;
+    min-height: 400px;
+    box-shadow: 0 3px 7px rgba(0,0,0, .5) inset;
+
+    .menu-wrapper{
+      min-height: 390px;
+
+      width: 250px;
+      margin: 10px 0 0 0px;
+      display: inline-block;
+      vertical-align: top;
+      .menu{
+        margin: 10px 0 0 0;
+
+        .lvl0{
+
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;;
+          background-color: #00b0e8;
+          box-shadow: 0 0 5px rgba(0,0,255,.5);
+          margin: 5px 0 5px 0;
+          a{
+            display: block;
+            height: 30px;
+            font-size: 20px;
+            line-height: 30px;
+            padding: 0 0 0 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.5);
+            color: #ccc;
+          }
+        }
+        .lvl1{
+          a{
+            color: black;
+          }
+        }
+      }
+    }
+    .content{
+      width: calc(100% - 255px);
+      min-height:390px;
+      display: inline-block;
+      background-color: #67b168;
+      margin: 10px 0 0 0;
+      vertical-align: top;
+    }
+  }
+
+}

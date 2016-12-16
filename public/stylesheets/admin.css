@@ -1,0 +1,59 @@
+/* line 2, admin.scss */
+#admin header {
+  width: 100%;
+  height: 30px;
+  background-color: #8c8c8c;
+  position: relative;
+}
+/* line 9, admin.scss */
+#admin .row {
+  margin: 0;
+  background-color: #9acfea;
+  min-height: 400px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5) inset;
+}
+/* line 15, admin.scss */
+#admin .row .menu-wrapper {
+  min-height: 390px;
+  width: 250px;
+  margin: 10px 0 0 0px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 22, admin.scss */
+#admin .row .menu-wrapper .menu {
+  margin: 10px 0 0 0;
+}
+/* line 25, admin.scss */
+#admin .row .menu-wrapper .menu .lvl0 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #00b0e8;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  margin: 5px 0 5px 0;
+}
+/* line 33, admin.scss */
+#admin .row .menu-wrapper .menu .lvl0 a {
+  display: block;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 0 0 0 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: #ccc;
+}
+/* line 45, admin.scss */
+#admin .row .menu-wrapper .menu .lvl1 a {
+  color: black;
+}
+/* line 51, admin.scss */
+#admin .row .content {
+  width: calc(100% - 255px);
+  min-height: 390px;
+  display: inline-block;
+  background-color: #67b168;
+  margin: 10px 0 0 0;
+  vertical-align: top;
+}

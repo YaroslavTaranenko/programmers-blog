@@ -2,7 +2,7 @@
  * Created by yaroslav on 11/23/16.
  */
 'use strict';
-var app = angular.module('MyApp', ['templates', 'ui.router', 'ngAnimate']);
+var app = angular.module('MyApp', ['templates', 'ui.router', 'ngAnimate', 'admin']);
 
 app.directive("scroll", function ($window) {
     return function(scope, element, attrs) {
@@ -58,13 +58,20 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     $stateProvider
         .state('app', {
             url: '',
-            templateUrl: 'templates/main.tpl.html',
+            template: '<ui-view></ui-view>',
             data : { pageTitle: 'The Blog: Home' }
         })
         .state('app.home', {
             url: '/',
-            templateUrl: 'templates/main.tpl.html',
+            templateUrl: 'templates/main.layout.tpl.html',
             data : { pageTitle: 'The Blog: Home' }
+        })
+
+
+        .state('app.admin',{
+            url: '/admin',
+            templateUrl: 'templates/admin.layout.tpl.html',
+            data: { pageTitle: 'The Blog: Admin' }
         })
 
     ;
