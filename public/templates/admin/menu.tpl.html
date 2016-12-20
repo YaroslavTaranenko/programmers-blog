@@ -1,0 +1,11 @@
+<ul class="menu">
+
+    <li class="lvl0" ng-repeat="m in amCtrl.menu">
+        <a href="{{m.href}}">{{m.title}}</a>
+        <ul class="submenu">
+            <li class="lvl1" ng-repeat="sm in m.subitems">
+                <a href="{{sm.href}}">{{sm.title}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>

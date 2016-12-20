@@ -73,6 +73,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             templateUrl: 'templates/admin.layout.tpl.html',
             data: { pageTitle: 'The Blog: Admin' }
         })
+        .state('app.admin.articles',{
+            url: '/articles',
+            templateUrl: 'templates/admin/articles.page.tpl.html',
+            data:{pageTitle: 'The Blog: Admin - articles'}
+        })
 
     ;
 
@@ -86,16 +91,28 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
 var app = angular.module('admin', []);
 
 app.controller('adminCtrl', function($scope){
-    $scope.menu = [
-        {title:'Blog', subitems:[
-            {title: 'Articles'},
-            {title: 'Tags'},
-            {title: 'Abc'}
-        ]},
-        {title:'Video'},
-        {title:'Resume'}
-    ]
-});;angular.module('templates', ['templates/admin.layout.tpl.html', 'templates/main.layout.tpl.html']);
+
+    
+});
+app.directive('adminMenu', function(){
+    return {
+        restrict: "E",
+        templateUrl: "templates/admin/menu.tpl.html",
+        controller: ['$http', '$scope', function($http, $scope){
+            
+            this.menu = [
+                {title:'Blog', subitems:[
+                    {title: 'Articles', href:'/admin/articles'},
+                    {title: 'Tags'},
+                    {title: 'Abc'}
+                ]},
+                {title:'Video'},
+                {title:'Resume'}
+            ]
+        }],
+        controllerAs: 'amCtrl'
+    };
+});;angular.module('templates', ['templates/admin.layout.tpl.html', 'templates/admin/articles.page.tpl.html', 'templates/admin/menu.tpl.html', 'templates/main.layout.tpl.html']);
 
 angular.module("templates/admin.layout.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/admin.layout.tpl.html",
@@ -105,19 +122,10 @@ angular.module("templates/admin.layout.tpl.html", []).run(["$templateCache", fun
     "    </header>\n" +
     "    <div class=\"row\">\n" +
     "        <div class=\"menu-wrapper\">\n" +
-    "            <ul class=\"menu\">\n" +
-    "                <li class=\"lvl0\" ng-repeat=\"m in menu\">\n" +
-    "                    <a href=\"{{m.href}}\">{{m.title}}</a>\n" +
-    "                    <ul class=\"submenu\">\n" +
-    "                        <li class=\"lvl1\" ng-repeat=\"sm in m.subitems\">\n" +
-    "                            <a href=\"{{sm.href}}\">{{sm.title}}</a>\n" +
-    "                        </li>\n" +
-    "                    </ul>\n" +
-    "                </li>\n" +
-    "            </ul>\n" +
+    "            <admin-menu></admin-menu>\n" +
     "        </div>\n" +
     "        <div class=\"content\">\n" +
-    "\n" +
+    "            <ui-view></ui-view>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "    <footer>\n" +
@@ -125,6 +133,27 @@ angular.module("templates/admin.layout.tpl.html", []).run(["$templateCache", fun
     "    </footer>\n" +
     "\n" +
     "</div>");
+}]);
+
+angular.module("templates/admin/articles.page.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/admin/articles.page.tpl.html",
+    "<h1>Articles</h1>");
+}]);
+
+angular.module("templates/admin/menu.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/admin/menu.tpl.html",
+    "<ul class=\"menu\">\n" +
+    "\n" +
+    "    <li class=\"lvl0\" ng-repeat=\"m in amCtrl.menu\">\n" +
+    "        <a href=\"{{m.href}}\">{{m.title}}</a>\n" +
+    "        <ul class=\"submenu\">\n" +
+    "            <li class=\"lvl1\" ng-repeat=\"sm in m.subitems\">\n" +
+    "                <a href=\"{{sm.href}}\">{{sm.title}}</a>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "    </li>\n" +
+    "</ul>\n" +
+    "");
 }]);
 
 angular.module("templates/main.layout.tpl.html", []).run(["$templateCache", function($templateCache) {

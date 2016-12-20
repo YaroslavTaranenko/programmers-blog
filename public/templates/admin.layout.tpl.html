@@ -4,19 +4,10 @@
     </header>
     <div class="row">
         <div class="menu-wrapper">
-            <ul class="menu">
-                <li class="lvl0" ng-repeat="m in menu">
-                    <a href="{{m.href}}">{{m.title}}</a>
-                    <ul class="submenu">
-                        <li class="lvl1" ng-repeat="sm in m.subitems">
-                            <a href="{{sm.href}}">{{sm.title}}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <admin-menu></admin-menu>
         </div>
         <div class="content">
-
+            <ui-view></ui-view>
         </div>
     </div>
     <footer>

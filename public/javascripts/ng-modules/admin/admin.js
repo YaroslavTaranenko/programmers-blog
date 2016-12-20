@@ -5,13 +5,25 @@
 var app = angular.module('admin', []);
 
 app.controller('adminCtrl', function($scope){
-    $scope.menu = [
-        {title:'Blog', subitems:[
-            {title: 'Articles'},
-            {title: 'Tags'},
-            {title: 'Abc'}
-        ]},
-        {title:'Video'},
-        {title:'Resume'}
-    ]
+
+    
+});
+app.directive('adminMenu', function(){
+    return {
+        restrict: "E",
+        templateUrl: "templates/admin/menu.tpl.html",
+        controller: ['$http', '$scope', function($http, $scope){
+            
+            this.menu = [
+                {title:'Blog', subitems:[
+                    {title: 'Articles', href:'/admin/articles'},
+                    {title: 'Tags'},
+                    {title: 'Abc'}
+                ]},
+                {title:'Video'},
+                {title:'Resume'}
+            ]
+        }],
+        controllerAs: 'amCtrl'
+    };
 });

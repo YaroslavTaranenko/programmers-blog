@@ -73,6 +73,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             templateUrl: 'templates/admin.layout.tpl.html',
             data: { pageTitle: 'The Blog: Admin' }
         })
+        .state('app.admin.articles',{
+            url: '/articles',
+            templateUrl: 'templates/admin/articles.page.tpl.html',
+            data:{pageTitle: 'The Blog: Admin - articles'}
+        })
 
     ;
 
